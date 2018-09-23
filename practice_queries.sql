@@ -168,8 +168,12 @@ FROM cd.bookings as b
 JOIN cd.members as m on m.memid = b.memid
 where TRIM(CONCAT(m.firstname, ' ', m.surname)) like 'David Farrell';
 
-
-
+/*  Example joining three tables together */
+SELECT * 
+FROM movie as m 
+JOIN casting as c ON m.id = c.movieid
+JOIN actor as a ON c.actorid = a.id
+WHERE a.name = 'John Hurt';
 
 
 
